@@ -5,7 +5,7 @@ const layoutStyle = {
   backgroundColor: '#ADD8E6'
 };
 
-const VersaoA = ({ children }) => (
+const VersaoA = () => (
   <div style={layoutStyle}>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dicta ipsa dignissimos velit temporibus fugiat reprehenderit voluptatem, tempora quo praesentium, officiis placeat quibusdam! Aspernatur, recusandae adipisci corrupti maiores quis laborum.</p>
   </div>
