@@ -1,0 +1,20 @@
+{
+  "name": "poc-launchdarkly",
+  "version": "0.0.1",
+  "description": "",
+  "main": "NextJS + Express + LaunchDarkly",
+  "scripts": {
+    "dev": "export LD_SDK_KEY=<SDK-KEY> && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ldclient-node": "^5.8.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
