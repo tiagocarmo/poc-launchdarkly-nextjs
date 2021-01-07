@@ -11,14 +11,14 @@ export const disablePromo = () => {
 
 const Promo = ({ features }) => {
 
-  if (!features['ativar-promo']) {
+  if (!features['nova-funcionalidade-da-api']) {
     return disablePromo();
   }
 
   return (
     <>
-      {!features['teste-a-b-promo-home'] && <VersaoA />}
-      {features['teste-a-b-promo-home'] && <VersaoB />}
+      {!features['nova-funcionalidade-da-api'] && <VersaoA />}
+      {features['nova-funcionalidade-da-api'] && <VersaoB />}
     </>
   );
 };

@@ -4,7 +4,7 @@
   "description": "",
   "main": "NextJS + Express + LaunchDarkly",
   "scripts": {
-    "dev": "export LD_SDK_KEY=<SDK-KEY> && node server.js"
+    "dev": "node server.js"
   },
   "keywords": [],
   "author": "",

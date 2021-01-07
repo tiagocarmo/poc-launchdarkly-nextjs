@@ -4,25 +4,24 @@ const next = require('next');
 
 const LaunchDarkly = require('ldclient-node');
 
+const sdk_key = 'sdk-a2dcb70a-f539-45db-9b91-41dd03bac569';
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const user = {
+  'firstName': 'Tiago',
+  'lastName': 'Carmo',
+  'key': 'tiago.carmo@minu.co'
+};
+
 app
   .prepare()
   .then(() => {
-    const ldclient = LaunchDarkly.init(process.env.LD_SDK_KEY);
+    const ldclient = LaunchDarkly.init(sdk_key);
     const server = express();
 
     server.use(async (req, res, next) => {
-      let user = {
-        'key': 'any',
-        'country': 'AU',
-        'custom': {
-          'page': 'index',
-          'roles': ['USER_ADMIN', 'BETA_CUSTOMER']
-        }
-      };
       let allFlags = await ldclient.allFlagsState(user).then(allFlags => {
         req.features = allFlags.allValues();
       });
@@ -30,14 +29,6 @@ app
     });
 
     server.get('/api/features', (req, res) => {
-      let user = {
-        'key': 'any',
-        'country': 'AU',
-        'custom': {
-          'page': 'index',
-          'roles': ['USER_ADMIN', 'BETA_CUSTOMER']
-        }
-      };
       let allFlags = ldclient.allFlagsState(user).then(allFlags => {
         res.json(allFlags.allValues());
       });
