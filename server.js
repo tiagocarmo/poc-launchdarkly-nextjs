@@ -4,15 +4,15 @@ const next = require('next');
 
 const LaunchDarkly = require('ldclient-node');
 
-const sdk_key = 'sdk-a2dcb70a-f539-45db-9b91-41dd03bac569';
+const sdk_key = '<SDK_ID>';
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const user = {
-  'firstName': 'Tiago',
-  'lastName': 'Carmo',
-  'key': 'tiago.carmo@minu.co'
+  'firstName': 'First',
+  'lastName': 'Last',
+  'key': 'mail@provider.com'
 };
 
 app
